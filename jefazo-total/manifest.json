@@ -1,0 +1,15 @@
+{
+  "name": "jefazo-total",
+  "short_name": "jefazo-total",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "jefazo-total.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
