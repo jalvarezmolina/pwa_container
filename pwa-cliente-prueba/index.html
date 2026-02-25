@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
+    <title></title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="../assets/user.svg">
+    <style>
+        body { background:#0f172a; color:#ffffff; font-family:, sans-serif; display:flex; flex-direction:column; align-items:center; padding:40px 20px; min-height:100vh; margin:0; box-sizing:border-box; text-align:center; }
+        .card { background:rgba(255,255,255,0.12); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.15); padding:15px; border-radius:18px; margin-bottom:12px; width:100%; max-width:290px; text-align:left; }
+        .btn { padding:8px 15px; border-radius:12px; width:100%; max-width:290px; font-weight:900; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:12px; text-transform:uppercase; font-size:13px; box-shadow:0 10px 20px rgba(0,0,0,0.1); }
+        .footer-wrap { margin-top:auto; padding-top:20px; width:100%; display:flex; flex-direction:column; align-items:center; }
+        .social-row { display:flex; gap:18px; justify-content:center; flex-wrap:wrap; margin-bottom:12px; }
+        #btnInstall { display:none; width:100%; max-width:290px; padding:10px; border:2px solid #94a3b8; color:#94a3b8; border-radius:50px; background:transparent; font-weight:900; margin-bottom:20px; cursor:pointer; font-size:10px; }
+    </style>
+</head>
+<body>
+    
+    
+    <h1 style="font-size:24px;margin:0;"></h1>
+    <p style="opacity:0.8;font-size:14px;margin-top:10px;max-width:300px;"></p>
+    <div style="margin-top:30px;width:100%;display:flex;flex-direction:column;align-items:center;">
+        
+        
+    </div>
+    <div class="footer-wrap">
+        <button id="btnInstall">INSTALAR APP</button>
+        <div class="social-row"><div class="social-row"></div></div>
+        <div style="font-size:9px; opacity:0.6; font-weight:bold; letter-spacing:1px; color:#94a3b8;">©2026 JUAN ALVAREZ STUDIO</div>
+    </div>
+    <script>
+        let defP; const bInst = document.getElementById('btnInstall');
+        window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); defP = e; bInst.style.display = 'block'; });
+        bInst.addEventListener('click', async () => { if(defP){ defP.prompt(); const {outcome} = await defP.userChoice; if(outcome==='accepted') bInst.style.display='none'; defP=null; } });
+        if('serviceWorker' in navigator) { window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js'); }); }
+    </script>
+</body>
+</html>
