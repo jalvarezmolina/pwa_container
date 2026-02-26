@@ -1,4 +1,4 @@
-const CACHE = 'pwa-v1772129887205';
+const CACHE = 'pwa-v1772130002157';
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE).then(c => c.addAll(['./index.html', './manifest.json']))
