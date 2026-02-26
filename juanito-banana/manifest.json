@@ -1,0 +1,22 @@
+{
+  "name": "Juanito Banana",
+  "short_name": "Juanito Banana",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#7299f3",
+  "theme_color": "#7299f3",
+  "icons": [
+    {
+      "src": "../assets/user.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "../assets/user.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
